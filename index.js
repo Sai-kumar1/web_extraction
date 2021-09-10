@@ -51,7 +51,6 @@ function get_article_data(article_link) {
         response.on('end',
             async () => {
                 data = JSON.parse(data);
-                // console.log(data)
 
                 data.objects[0]["summaryText"] = await get_summary(data.objects[0].text, 2);
                 let file_data = JSON.stringify(data, null, 2);
